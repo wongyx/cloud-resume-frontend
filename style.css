@@ -14,8 +14,10 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-header {
-  text-align: center;
+header.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 30px;
 }
 
@@ -65,4 +67,39 @@ ul {
 
 .skills li {
   list-style-type: square;
+}
+
+header.resume-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 300px;
+}
+
+.header-left {
+  position: relative;
+  text-align: center;
+}
+
+.visitor-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.visitor-counter .label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.visitor-counter .count {
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 2px solid #0066cc;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 60px;
 }

@@ -8,11 +8,19 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Wong Yong Xiang</h1>
+    
+    <header class="resume-header">
+      <div class="header-left">
+        <h1>Wong Yong Xiang</h1>
       <p class="contact"> 
         <a href="https://www.linkedin.com/in/wongyongxiang" target="_blank">LinkedIn</a>
       </p>
+      </div>
+
+      <div class="visitor-counter">
+        <div class="label">Visitor count</div>
+        <div class="count" id="visitorCount">0</div>
+      </div>
     </header>
 
     <section>
@@ -98,5 +106,17 @@
       </ul>
     </section>
   </div>
+  <script>
+    const url = "https://cu649u8va9.execute-api.ap-southeast-1.amazonaws.com/visitorCount/increment";
+    fetch(url, {
+      method: "Post"
+    }).then(response => response.json())
+    .then(data => {
+      document.getElementById("visitorCount").textContent = data.current_count;
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  </script>
 </body>
 </html>
